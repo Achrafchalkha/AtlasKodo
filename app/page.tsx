@@ -178,7 +178,7 @@ export default function Home() {
             <a href="#projects" className="text-light-100 hover:text-emerald-accent transition-colors">Portfolio</a>
             <a href="#services" className="text-light-100 hover:text-emerald-accent transition-colors">Services</a>
             <a href="#contact" className="text-light-100 hover:text-emerald-accent transition-colors">Contact</a>
-            <a href="#founder" className="text-light-100 hover:text-emerald-accent transition-colors">Founder</a>
+            <a href="#founder" className="text-light-100 hover:text-emerald-accent transition-colors">Team</a>
           </div>
 
           <div className="flex items-center gap-4">
@@ -200,7 +200,7 @@ export default function Home() {
               <a href="#projects" className="block text-light-100 hover:text-emerald-accent transition-colors">Portfolio</a>
               <a href="#services" className="block text-light-100 hover:text-emerald-accent transition-colors">Services</a>
               <a href="#contact" className="block text-light-100 hover:text-emerald-accent transition-colors">Contact</a>
-              <a href="#founder" className="block text-light-100 hover:text-emerald-accent transition-colors">Founder</a>
+              <a href="#founder" className="block text-light-100 hover:text-emerald-accent transition-colors">Team</a>
               <a
                 href={whatsappBookCallUrl}
                 target="_blank"
@@ -236,7 +236,7 @@ export default function Home() {
 
           {/* Subtext */}
           <p className="text-lg md:text-xl text-light-400 max-w-2xl mx-auto leading-relaxed fade-up" style={{ fontFamily: 'var(--font-body)', animationDelay: '0.4s' }}>
-            AtlasKodo.dev is a one-man powerhouse — full-stack engineer, researcher, and builder. From MVPs to production-grade platforms, every line of code is intentional.
+            AtlasKodo.dev is a focused team of engineers, researchers, and builders. From MVPs to production-grade platforms, every line of code is intentional.
           </p>
 
           {/* CTA Buttons */}
@@ -439,7 +439,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Founder Section */}
+      {/* Team Section */}
       <section id="founder" className="py-20 px-4 relative">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -450,7 +450,7 @@ export default function Home() {
               </h2>
               <div className="flex flex-wrap gap-2">
                 <span className="text-xs px-3 py-1 rounded-full border border-emerald-accent/30 text-emerald-accent bg-emerald-accent/5">
-                  Founder
+                  Team
                 </span>
                 <span className="text-xs px-3 py-1 rounded-full border border-emerald-accent/30 text-emerald-accent bg-emerald-accent/5">
                   Full-Stack Engineer
@@ -461,15 +461,15 @@ export default function Home() {
               </div>
 
               <p className="text-light-400 leading-relaxed">
-                Achraf is a full-stack engineer who has shipped production-grade platforms across multiple industries — from AI-powered career tools and educational platforms to restaurant systems and enterprise dashboards. He works across the entire stack, adapting to what each project demands, with a relentless focus on clean architecture and real-world impact.
+                Achraf is a full-stack engineer at AtlasKodo who has shipped production-grade platforms across multiple industries — from AI-powered career tools and educational platforms to restaurant systems and enterprise dashboards. Our team works across the entire stack, adapting to what each project demands, with a relentless focus on clean architecture and real-world impact.
               </p>
 
               <p className="text-light-400 leading-relaxed">
-                Beyond client work, Achraf serves as a Research Assistant at Oracle, where he works on cutting-edge software engineering problems at scale. He brings that same research-driven rigor and systems thinking to every product he builds.
+                Beyond client work, Achraf serves as a Research Assistant at Oracle, working on cutting-edge software engineering problems at scale. He brings that same research-driven rigor and systems thinking to every product we ship.
               </p>
 
               <p className="text-light-400 leading-relaxed font-bold">
-                He doesn't just deliver websites — he delivers engineered solutions.
+                We don't just deliver websites — we deliver engineered solutions.
               </p>
 
               {/* Contact Buttons */}
@@ -611,7 +611,7 @@ export default function Home() {
               <a href="#projects" className="text-light-400 hover:text-emerald-accent transition-colors text-sm">Portfolio</a>
               <a href="#services" className="text-light-400 hover:text-emerald-accent transition-colors text-sm">Services</a>
               <a href="#contact" className="text-light-400 hover:text-emerald-accent transition-colors text-sm">Contact</a>
-              <a href="#founder" className="text-light-400 hover:text-emerald-accent transition-colors text-sm">Founder</a>
+              <a href="#founder" className="text-light-400 hover:text-emerald-accent transition-colors text-sm">Team</a>
             </div>
           </div>
 
