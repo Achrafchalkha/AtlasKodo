@@ -178,7 +178,7 @@ export default function Home() {
             <a href="#projects" className="text-light-100 hover:text-emerald-accent transition-colors">Portfolio</a>
             <a href="#services" className="text-light-100 hover:text-emerald-accent transition-colors">Services</a>
             <a href="#contact" className="text-light-100 hover:text-emerald-accent transition-colors">Contact</a>
-            <a href="#founder" className="text-light-100 hover:text-emerald-accent transition-colors">Team</a>
+            <a href="#founder" className="text-light-100 hover:text-emerald-accent transition-colors">Founder</a>
           </div>
 
           <div className="flex items-center gap-4">
@@ -200,7 +200,7 @@ export default function Home() {
               <a href="#projects" className="block text-light-100 hover:text-emerald-accent transition-colors">Portfolio</a>
               <a href="#services" className="block text-light-100 hover:text-emerald-accent transition-colors">Services</a>
               <a href="#contact" className="block text-light-100 hover:text-emerald-accent transition-colors">Contact</a>
-              <a href="#founder" className="block text-light-100 hover:text-emerald-accent transition-colors">Team</a>
+              <a href="#founder" className="block text-light-100 hover:text-emerald-accent transition-colors">Founder</a>
               <a
                 href={whatsappBookCallUrl}
                 target="_blank"
@@ -439,7 +439,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Founder Section */}
       <section id="founder" className="py-20 px-4 relative">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -450,7 +450,7 @@ export default function Home() {
               </h2>
               <div className="flex flex-wrap gap-2">
                 <span className="text-xs px-3 py-1 rounded-full border border-emerald-accent/30 text-emerald-accent bg-emerald-accent/5">
-                  Team
+                  Founder
                 </span>
                 <span className="text-xs px-3 py-1 rounded-full border border-emerald-accent/30 text-emerald-accent bg-emerald-accent/5">
                   Full-Stack Engineer
@@ -611,7 +611,7 @@ export default function Home() {
               <a href="#projects" className="text-light-400 hover:text-emerald-accent transition-colors text-sm">Portfolio</a>
               <a href="#services" className="text-light-400 hover:text-emerald-accent transition-colors text-sm">Services</a>
               <a href="#contact" className="text-light-400 hover:text-emerald-accent transition-colors text-sm">Contact</a>
-              <a href="#founder" className="text-light-400 hover:text-emerald-accent transition-colors text-sm">Team</a>
+              <a href="#founder" className="text-light-400 hover:text-emerald-accent transition-colors text-sm">Founder</a>
             </div>
           </div>
 
