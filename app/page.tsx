@@ -13,6 +13,7 @@ export default function Home() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [isSending, setIsSending] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const projectsScrollRef = useRef<HTMLDivElement>(null);
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -48,11 +49,30 @@ export default function Home() {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
-      setFormSubmitted(true);
-      setTimeout(() => {
-        setFormSubmitted(false);
-        setFormData({ name: '', email: '', message: '' });
-      }, 3000);
+      setIsSending(true)
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+        .then(async (res) => {
+          if (!res.ok) {
+            const data = await res.json().catch(() => null)
+            const msg = data?.error || 'Failed to send message'
+            throw new Error(msg)
+          }
+
+          setFormSubmitted(true)
+          setTimeout(() => {
+            setFormSubmitted(false)
+            setFormData({ name: '', email: '', message: '' })
+          }, 3000)
+        })
+        .catch((err: unknown) => {
+          const msg = err instanceof Error ? err.message : 'Failed to send message'
+          setErrors((prev) => ({ ...prev, submit: msg }))
+        })
+        .finally(() => setIsSending(false))
     }
   };
 
@@ -221,9 +241,13 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 fade-up" style={{ animationDelay: '0.5s' }}>
-            <button className="px-8 py-3 bg-emerald-accent text-dark-950 font-bold rounded-lg hover:glow-emerald-strong transition-all" style={{ fontFamily: 'var(--font-display)' }}>
+            <a
+              href="#projects"
+              className="px-8 py-3 bg-emerald-accent text-dark-950 font-bold rounded-lg hover:glow-emerald-strong transition-all"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
               Explore Work
-            </button>
+            </a>
             <button className="px-8 py-3 border-2 border-emerald-accent text-emerald-accent font-bold rounded-lg hover:bg-emerald-accent/10 transition-all" style={{ fontFamily: 'var(--font-display)' }}>
               <a href={whatsappBookCallUrl} target="_blank" rel="noopener noreferrer">Book a Call</a>
             </button>
@@ -548,11 +572,16 @@ export default function Home() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-emerald-accent text-dark-950 font-bold rounded-lg hover:shadow-lg hover:shadow-emerald-accent/50 transition-all flex items-center justify-center gap-2"
+                disabled={isSending}
+                className="w-full px-6 py-3 bg-emerald-accent text-dark-950 font-bold rounded-lg hover:shadow-lg hover:shadow-emerald-accent/50 transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
-                <Send size={18} /> Send Message
+                <Send size={18} /> {isSending ? 'Sending…' : 'Send Message'}
               </button>
+
+              {errors.submit && (
+                <p className="text-red-400 text-sm text-center">{errors.submit}</p>
+              )}
             </form>
           ) : (
             <div className="glass rounded-lg p-12 text-center">
